@@ -6,10 +6,10 @@ C0_UL = 275; % Initial H2O concentration (Upper limit)
 C0_LL = 192; % Initial H2O concentration (Lower limit)
 C1 = 5.5;  % Final H2O concentration (at grain rim)
 
-%h_UL = 579.2116; Input max. half-length of SIMS profile
-%h_LL = 460.538; Input min. half-length of SIMS profile
+%h_UL = 579.2116; Input grain size (upper limit)
+%h_LL = 460.538; Input grain size (lower limit)
 
-% Grid step size
+% Grid step size till half-length of SIMS profile/grain size (upper limit)
 x = 0:5:(h_UL/2); 
 
 % Cooling rate 
