@@ -1,35 +1,36 @@
 % H+ Diffusion in clinopyroxene 
 % Model: Non-isothermal finite slab in an infinite reservoir with non-zero surface concentration
 
-%% Input values 
-C0_UL = 275; % Initial H2O concentration (Upper limit)
-C0_LL = 192; % Initial H2O concentration (Lower limit)
-C1 = 5.5;  % Final H2O concentration (at grain rim)
+%% Input H2O concentration values 
+% C0_UL = 276; Initial H2O concentration (Upper limit)
+% C0_LL = 192; Initial H2O concentration (Lower limit)
+% C1 = 5.5;  Final H2O concentration (at grain rim)
 
+%% Input grain size values
 %h_UL = 579.2116; Input grain size (upper limit)
 %h_LL = 460.538; Input grain size (lower limit)
 
 % Grid step size till half-length of SIMS profile/grain size (upper limit)
 x = 0:5:(h_UL/2); 
 
-% Cooling rate 
-del_T = 1; % cooling rate per hour
+%% Input Cooling rate 
+%del_T = 1; % cooling rate per hour
 del_T_s = del_T/3600; % cooling rate per second
 
-% Monte Carlo settings
-nMC = 1000;
+%% Monte Carlo settings
+%nMC = 1000;
 
 % Random inputs from the Monte Carlo values
 C0_random = C0_LL + (C0_UL - C0_LL).*rand(nMC,1);
 h_random  = h_LL + (h_UL - h_LL).*rand(nMC,1);
 
-% Time increments (seconds)
-t_increments = [504, 18540, 33984];
+%% Time increments (seconds)
+%t_increments = [504, 18540, 33984];
 
-% Diffusion parameters (Bissbort et al. 2022)
-D0 = 5.47e-8; 
-Ea = 115640;  
-R = 8.314; 
+%% Input Diffusion parameters 
+%D0 = 5.47e-8; from Bissbort et al. (2022)
+%Ea = 115640;  from Bissbort et al. (2022)
+%R = 8.314; from Bissbort et al. (2022)
 
 %% Temperature setup
 T0 = 1100 + 273; % Celsius to Kelvin
@@ -89,7 +90,7 @@ C_xt_min  = nanmin(C_xt_MC, [], 3);
 C_xt_max  = nanmax(C_xt_MC, [], 3);
 
 %% Plotting the diffusion profiles
-%data = readmatrix('1C_Crystalwise Diffusion Profile.xlsx', 'Sheet','measuredH2O_2a');
+%data = readmatrix('Example_ConcentrationProfile.xlsx', 'Sheet','Sheet1');
 
 x_meas = data(:,4);
 C_meas = data(:,5);
