@@ -7,8 +7,8 @@
 % C1 = 5.5;  Final H2O concentration (at grain rim)
 
 %% Input grain size values
-%h_UL = 579.2116; Input grain size (upper limit)
-%h_LL = 460.538; Input grain size (lower limit)
+%h_UL = 759.3365; Input grain size (upper limit)
+%h_LL = 649.5944; Input grain size (lower limit)
 
 % Grid step size till half-length of SIMS profile/grain size (upper limit)
 x = 0:5:(h_UL/2); 
@@ -25,7 +25,7 @@ C0_random = C0_LL + (C0_UL - C0_LL).*rand(nMC,1);
 h_random  = h_LL + (h_UL - h_LL).*rand(nMC,1);
 
 %% Time increments (seconds)
-%t_increments = [504, 18540, 33984];
+%t_increments = [288, 30024, 80000];
 
 %% Input Diffusion parameters 
 %D0 = 5.47e-8; from Bissbort et al. (2022)
